@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='petitzway',
-    version='0.0.4',
+    version='0.0.5',
     description='Python module for Z-Way API',
     author='Fredrik Haglund',
     author_email='fredrik@petitcircuitlab.com',
