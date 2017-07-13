@@ -1,8 +1,6 @@
-.DS_Store
-._.DS_Store
-._LICENSE
-._README.md
-._setup.py
+.*
 build/
 dist/
 petitzway.egg-info/
+test.py
+petitzway/__pycache__/
