@@ -1,6 +1,8 @@
-.*
+.tox
+.mypy_cache
 build/
 dist/
 petitzway.egg-info/
 test.py
+.idea/
 petitzway/__pycache__/

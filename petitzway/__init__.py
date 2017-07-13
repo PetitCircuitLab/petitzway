@@ -116,7 +116,7 @@ class SwitchBinary(GenericBinaryDevice):
         self._session.get(self._prefix + "/devices/{}/command/{}".
                           format(self.device_id, command))
 
-    def turn_off(self, value: bool) -> None:
+    def turn_off(self) -> None:
         """Turn off the device."""
         command = "off"
         self._session.get(self._prefix + "/devices/{}/command/{}".
