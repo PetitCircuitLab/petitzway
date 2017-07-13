@@ -4,12 +4,12 @@ from setuptools import setup
 
 setup(
     name='petitzway',
-    version='0.0.3',
-    description='Python module for Z-Way Automation API',
+    version='0.0.4',
+    description='Python module for Z-Way API',
     author='Fredrik Haglund',
     author_email='fredrik@petitcircuitlab.com',
     license='BSD',
-    keywords='zwave',
+    keywords=['zwave', 'zway', 'z-way'],
     classifiers=[
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3 :: Only'
