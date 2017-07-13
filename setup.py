@@ -4,8 +4,8 @@ from setuptools import setup
 
 setup(
     name='petitzway',
-    version='0.0.2',
-    description='Python for Z-Way',
+    version='0.0.3',
+    description='Python module for Z-Way Automation API',
     author='Fredrik Haglund',
     author_email='fredrik@petitcircuitlab.com',
     license='BSD',
@@ -14,6 +14,7 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3 :: Only'
     ],
+    url='https://github.com/PetitCircuitLab/petitzway',
     packages=['petitzway'],
     install_requires=[
         'requests',

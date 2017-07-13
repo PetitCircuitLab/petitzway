@@ -8,12 +8,10 @@ class GenericDevice(object):
         self._update_attrs(data)
 
     def update(self) -> None:
-        """Update object with data from ZWay"""
         data = self._session.get(self._prefix + "/devices/" + self.id).json().get('data')
         self._update_attrs(data)
 
     def _update_attrs(self, data: dict) -> None:
-        """Update attributes given data from ZWay"""
         self._data = data
         self.id = self._data['id']
         self.title = self._data['metrics'].get('title')
@@ -23,7 +21,6 @@ class GenericDevice(object):
         self.probetype = self._data['probeType']
 
     def is_tagged(self, tag: str=None) -> bool:
-        """Return True if device has specified tag"""
         if tag is not None:
             return tag in self._data.get('tags', [])
         else:
@@ -118,7 +115,6 @@ class SensorBinary(GenericBinaryDevice):
 
 
 class Controller(object):
-    """Z-Way Controller"""
     def __init__(self,
                  baseurl: str,
                  username: str=None,
@@ -139,7 +135,6 @@ class Controller(object):
                 return device
 
     def get_all_devices(self) -> List[GenericDevice]:
-        """Return all known devices (except those permanently hidden)"""
         response = self._session.get(self._prefix + "/devices")
         all_devices = []
         for device_dict in response.json().get('data').get('devices'):
@@ -151,13 +146,11 @@ class Controller(object):
         return all_devices
 
     def get_device(self, device_id: str) -> GenericDevice:
-        """Return single device by ID"""
         response = self._session.get(self._prefix + "/devices/" + device_id)
         device_dict = response.json().get('data')
         return create_device(device_dict, self._session, self._prefix)
 
 def create_device(device_dict: dict, session: Session, prefix: str) -> GenericDevice:
-    """Create ZWay device from device data dictionary"""
     device_class_map = {
         'switchBinary': SwitchBinary,
         'switchMultilevel': SwitchMultilevel,
